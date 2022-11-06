@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+<link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                    <img src="~/images/logo.jpg" width="45 " height="30" title="Banking System" alt="Banking System" />
+                </a>
+                @Html.ActionLink("Banking System", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("My Account", "CustomerEdit", "MyAccount")</li>
+                    <li>@Html.ActionLink("Loans", "Index", "Loandetail_Tbl")</li>
+                    <li>@Html.ActionLink("Funds Transfer", "Index", "Funds")</li>
+                    <li>@Html.ActionLink("My Transactions", "Index", "MyTrans")</li>
+
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a>Hello-@User.Identity.Name</a></li>
+                        <li>@Html.ActionLink("Logout", "Logout", "AdminLogin")</li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("Signup", "CustomerLogin")">
+                                <span class="glyphicon glyphicon-registration-mark"></span>
+                                Signup
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login", "CustomerLogin")">
+                                <span class="glyphicon glyphicon-log-in"></span>
+                                Login
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <br />
+        <br />
+
+        <div style="bottom:0;position: fixed; width:100%;">
+            <hr style="width:100%;" />
+            <footer>
+                
+                <p>
+                    <h4 style="color:ghostwhite">
+                        &copy; @DateTime.Now.Year -BankingSystem by GaneshKumarP.
+                        <a class="footerlinks" href="@Url.Action("Login", "AdminLogin")" target="_blank" style="background-color:transparent; ">Admin Login</a>
+                    </h4>
+
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

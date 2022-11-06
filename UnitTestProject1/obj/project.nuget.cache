@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "w+xP1h0rzM2Q7l4OSJ1YARvuJUPZUh6Cx1UbelDOOTkM03FcVFio4lQFoUEzOgb/keK9vUczS2SyPlOUtb/h9Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ganes\\OneDrive\\Desktop\\case\\UnitTestProject1\\UnitTestProject1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ganes\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\microsoft.codecoverage\\16.2.0\\microsoft.codecoverage.16.2.0.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\microsoft.net.test.sdk\\16.2.0\\microsoft.net.test.sdk.16.2.0.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit\\2.4.1\\xunit.2.4.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.analyzers\\0.10.0\\xunit.analyzers.0.10.0.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
+    "C:\\Users\\ganes\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}

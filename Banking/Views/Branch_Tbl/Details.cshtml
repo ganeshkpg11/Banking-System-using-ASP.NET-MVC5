@@ -1,0 +1,51 @@
+﻿@model Banking.Models.Branch_Tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Branch_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.branch_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.branch_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ifsc_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ifsc_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.branchid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

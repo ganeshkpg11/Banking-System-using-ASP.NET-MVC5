@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Banking.Models.Customer_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+}
+
+<h2>Account Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th class="bg-info">
+            Account No.
+        </th>
+        <th class="bg-info">
+            Full Name
+        </th>
+        <th class="bg-info">
+            Contact No.
+        </th>
+        <th class="bg-info">
+            Email
+        </th>
+        <th class="bg-info">
+            Occupation
+        </th>
+        <th class="bg-info">
+            State
+        </th>
+        <th class="bg-info">
+            City
+        </th>
+        <th class="bg-info">
+            Account type
+        </th>
+        <th class="bg-info">
+            Pincode
+        </th>
+        <th class="bg-info">
+            Address
+        </th>
+        <th class="bg-info">
+            Username
+        </th>
+        <th class="bg-info">
+            Password
+        </th>
+        <th class="bg-info">
+            Balance Amt
+        </th>
+        <th class="bg-info">
+          Actions
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.accountno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.full_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contact_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.occupation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accounttype)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pincode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.balance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.accountno }) |
+            @Html.ActionLink("Details", "Details", new { id = item.accountno }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.accountno })
+        </td>
+    </tr>
+}
+
+</table>

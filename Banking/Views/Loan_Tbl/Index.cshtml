@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Banking.Models.Loan_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+}
+
+<h2>Loan Details</h2>
+<style>
+    .bgcolor {
+        background-color: transparent;
+    }
+</style>
+<p>
+    @Html.ActionLink("Create New", "Create", "", new {@class="bgcolor"})
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th class="bg-info">
+            Loan ID
+        </th>
+        <th class="bg-info">
+            Loan Type
+        </th>
+        <th class="bg-info">
+            Amount
+        </th>
+        <th class="bg-info">
+            Interest Rate
+        </th>
+        <th class="bg-info">
+            Duration(in months)
+        </th>
+        <th class="bg-info">Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.loanid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.interest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duration)
+        </td>
+        <td>
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.loanid }, new { @class = "bgcolor" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.loanid }, new { @class = "bgcolor" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.loanid }, new { @class = "bgcolor" })
+
+
+        </td>
+    </tr>
+}
+
+</table>

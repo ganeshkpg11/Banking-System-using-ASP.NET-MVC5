@@ -1,0 +1,117 @@
+﻿@model Banking.Models.Customer_Tbl
+
+@{
+    ViewBag.Title = "CustomerEdit";
+}
+
+<h2>Edit Profile</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="col-md-offset-2 col-md-10">
+        @*<label>Account Number</label>*@
+        @*<input type="text" value="@Session["accountno"]" class="form-control" readonly />*@
+        @Html.HiddenFor(model => model.accountno, new { htmlAttributes = new { @class = "form-control", @Value = @Session["AccNo"]} })
+    </div>
+    <div class="form-group">
+       
+        <div class="col-md-offset-2 col-md-10">
+            <label>Full Name</label>
+            @Html.EditorFor(model => model.full_name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.full_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Contact Number</label>
+            @Html.EditorFor(model => model.contact_no, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.contact_no, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Email</label>
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Occupation</label>
+            @Html.EditorFor(model => model.occupation, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>State</label>
+            @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>City</label>
+            @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Account Type</label>
+            @Html.EditorFor(model => model.accounttype, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.accounttype, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Pin Code</label>
+            @Html.EditorFor(model => model.pincode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.pincode, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Address</label>
+            @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Username</label>
+            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <label>Password</label>
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-10">
+            <input type="submit" value="Save Profile" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}

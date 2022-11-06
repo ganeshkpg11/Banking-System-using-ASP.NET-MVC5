@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Banking.Models.Loandetail_Tbl>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+    }
+
+    <h2>Loan Applied</h2>
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th class="bg-info">
+                Loan Id
+            </th>
+            <th class="bg-info">
+                Account No Applied
+            </th>
+           
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.loanid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.accountno)
+                </td>
+              
+            </tr>
+        }
+
+    </table>
+
+

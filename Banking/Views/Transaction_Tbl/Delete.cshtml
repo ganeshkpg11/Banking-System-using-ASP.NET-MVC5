@@ -1,0 +1,72 @@
+﻿@model Banking.Models.Transaction_Tbl
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Transaction_Tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.accountno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.withdraw)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.withdraw)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.deposit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.deposit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transferfrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transferfrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transferto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transferto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.balanceamt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.balanceamt)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

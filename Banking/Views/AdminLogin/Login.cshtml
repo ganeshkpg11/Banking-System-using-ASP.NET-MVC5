@@ -1,0 +1,84 @@
+﻿@model Banking.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+@*@Html.ValidationMessageFor(model => model.username, "", new { @class = "error" })*@
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <center>
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-md-pull-6 ">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <img width="150px" src="~/images/admin.jpg" />
+                                        @*<img width="150px" src="~/imgs/account.jpg"*@
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <center>
+                                        <h3>Admin Login</h3>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <hr />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col">
+                                        <center>
+                                            <div class="form-group">
+                                                <label><h4>User Name</h4></label>
+                                                @Html.TextBoxFor(model => model.username, new { @class = "form-control", placeholder = "Username" })
+                                                <div style="height:20px;">
+                                                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Password</label>
+                                                @Html.PasswordFor(model => model.password, new { @class = "form-control", placeholder = "Password" })
+                                                <div style="height:20px;">
+                                                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-success btn-md "> Login</button>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="reset" class="btn btn-danger btn-md">Cancel</button>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h2>@ViewBag.Data</h2>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+}

@@ -1,0 +1,115 @@
+﻿@model Banking.Models.Customer_Tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.full_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.full_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contact_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contact_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.occupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accounttype)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accounttype)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pincode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pincode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.balance)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.accountno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

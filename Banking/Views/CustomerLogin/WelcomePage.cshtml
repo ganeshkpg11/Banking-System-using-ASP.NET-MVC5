@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "WelcomePage";
+}
+
+<style>
+    .bg-img {
+        background-image: url('../images/desktop.jpg');
+        background-size: 100% cover;
+        background-position: center center;
+        background-repeat: repeat;
+        height: fit-content;
+        margin: initial;
+    }
+</style>
+<body class="bg-img">
+
+
+    <center>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <h1 style="font-size:78px;color:white"> Welcome to Banking System</h1>
+        @*<style>
+            h2{text-align:right; }
+        </style>*@
+        <br />
+
+        <h1>Account Number:  @Session["AccNo"].ToString()</h1>
+        <h1>Account User Name: @Session["UserName"].ToString()</h1>
+    </center>
+</body>
+

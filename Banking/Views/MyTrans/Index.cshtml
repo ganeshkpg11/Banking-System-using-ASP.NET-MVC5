@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Banking.Models.Transaction_Tbl>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>My Transactions</h2>
+<br />
+<table class="table table-bordered  table-hover ">
+    <tr>
+        <th class="bg-info">
+            Transaction Id
+        </th>
+        <th class="bg-info">
+            Account No
+        </th>
+        <th class="bg-info">
+            Withdraw
+        </th>
+        <th class="bg-info">
+            Deposit
+        </th>
+        <th class="bg-info">
+            Transfer From
+        </th>
+        <th class="bg-info">
+            Transfer To
+        </th>
+        <th class="bg-info">
+            Balance Amount
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.transid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.accountno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.withdraw)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deposit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transferfrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.transferto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.balanceamt)
+            </td>
+        </tr>
+    }
+
+</table>
+

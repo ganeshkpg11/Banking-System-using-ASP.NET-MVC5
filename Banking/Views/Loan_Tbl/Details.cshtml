@@ -1,0 +1,51 @@
+﻿@model Banking.Models.Loan_Tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageForAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.interest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.interest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.loanid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

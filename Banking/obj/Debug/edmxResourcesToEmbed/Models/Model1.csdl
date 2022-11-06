@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankingSystem_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin_Tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Branch_Tbl">
+    <Key>
+      <PropertyRef Name="branchid" />
+    </Key>
+    <Property Name="branchid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="branch_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ifsc_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Customer_Tbl">
+    <Key>
+      <PropertyRef Name="accountno" />
+    </Key>
+    <Property Name="accountno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="accounttype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pincode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="balance" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Loan_Tbl">
+    <Key>
+      <PropertyRef Name="loanid" />
+    </Key>
+    <Property Name="loanid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Int32" />
+    <Property Name="interest" Type="Double" />
+    <Property Name="duration" Type="Int32" />
+    <NavigationProperty Name="Loandetail_Tbl" Relationship="Self.FK_Loandetail_Tbl_Loan_Tbl" FromRole="Loan_Tbl" ToRole="Loandetail_Tbl" />
+  </EntityType>
+  <EntityType Name="Loandetail_Tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="loanid" Type="Int32" />
+    <Property Name="accountno" Type="Int32" />
+    <NavigationProperty Name="Loan_Tbl" Relationship="Self.FK_Loandetail_Tbl_Loan_Tbl" FromRole="Loandetail_Tbl" ToRole="Loan_Tbl" />
+  </EntityType>
+  <EntityType Name="Transaction_Tbl">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="accountno" Type="Int32" />
+    <Property Name="withdraw" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="deposit" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="transferfrom" Type="Int32" />
+    <Property Name="transferto" Type="Int32" />
+    <Property Name="balanceamt" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <Association Name="FK_Loandetail_Tbl_Loan_Tbl">
+    <End Role="Loan_Tbl" Type="Self.Loan_Tbl" Multiplicity="0..1" />
+    <End Role="Loandetail_Tbl" Type="Self.Loandetail_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loan_Tbl">
+        <PropertyRef Name="loanid" />
+      </Principal>
+      <Dependent Role="Loandetail_Tbl">
+        <PropertyRef Name="loanid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BankingSystem_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin_Tbl" EntityType="Self.Admin_Tbl" />
+    <EntitySet Name="Branch_Tbl" EntityType="Self.Branch_Tbl" />
+    <EntitySet Name="Customer_Tbl" EntityType="Self.Customer_Tbl" />
+    <EntitySet Name="Loan_Tbl" EntityType="Self.Loan_Tbl" />
+    <EntitySet Name="Loandetail_Tbl" EntityType="Self.Loandetail_Tbl" />
+    <EntitySet Name="Transaction_Tbl" EntityType="Self.Transaction_Tbl" />
+    <AssociationSet Name="FK_Loandetail_Tbl_Loan_Tbl" Association="Self.FK_Loandetail_Tbl_Loan_Tbl">
+      <End Role="Loan_Tbl" EntitySet="Loan_Tbl" />
+      <End Role="Loandetail_Tbl" EntitySet="Loandetail_Tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

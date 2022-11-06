@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BankingSystem_DBModelStoreContainer" CdmEntityContainer="BankingSystem_DBEntities">
+    <EntitySetMapping Name="Admin_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Admin_Tbl">
+        <MappingFragment StoreEntitySet="Admin_Tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branch_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Branch_Tbl">
+        <MappingFragment StoreEntitySet="Branch_Tbl">
+          <ScalarProperty Name="branchid" ColumnName="branchid" />
+          <ScalarProperty Name="branch_name" ColumnName="branch_name" />
+          <ScalarProperty Name="ifsc_code" ColumnName="ifsc_code" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="city" ColumnName="city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Customer_Tbl">
+        <MappingFragment StoreEntitySet="Customer_Tbl">
+          <ScalarProperty Name="accountno" ColumnName="accountno" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="contact_no" ColumnName="contact_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="accounttype" ColumnName="accounttype" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loan_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Loan_Tbl">
+        <MappingFragment StoreEntitySet="Loan_Tbl">
+          <ScalarProperty Name="loanid" ColumnName="loanid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="interest" ColumnName="interest" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loandetail_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Loandetail_Tbl">
+        <MappingFragment StoreEntitySet="Loandetail_Tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="loanid" ColumnName="loanid" />
+          <ScalarProperty Name="accountno" ColumnName="accountno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaction_Tbl">
+      <EntityTypeMapping TypeName="BankingSystem_DBModel.Transaction_Tbl">
+        <MappingFragment StoreEntitySet="Transaction_Tbl">
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="accountno" ColumnName="accountno" />
+          <ScalarProperty Name="withdraw" ColumnName="withdraw" />
+          <ScalarProperty Name="deposit" ColumnName="deposit" />
+          <ScalarProperty Name="transferfrom" ColumnName="transferfrom" />
+          <ScalarProperty Name="transferto" ColumnName="transferto" />
+          <ScalarProperty Name="balanceamt" ColumnName="balanceamt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
